@@ -4,278 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aafiyah's World</title>
-    <style>
-      :root {
-        --bg: #061a13;
-        --panel: rgba(12, 31, 24, 0.9);
-        --panel-alt: rgba(17, 41, 31, 0.85);
-        --green: #8ce99a;
-        --yellow: #f7d154;
-        --red: #ff5d5d;
-        --text: #ebfff6;
-        --muted: #bfdcc8;
-        --shadow: rgba(0, 0, 0, 0.25);
-      }
-
-      * { box-sizing: border-box; }
-
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(180deg, #0c1f18 0%, #17372a 32%, #0d1a14 100%);
-        color: var(--text);
-      }
-
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 48px 20px 80px;
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 28px;
-        align-items: center;
-      }
-
-      .eyebrow {
-        display: inline-block;
-        font-size: 12px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--green);
-        margin-bottom: 18px;
-      }
-
-      h1 {
-        margin: 0 0 18px;
-        font-size: clamp(2.5rem, 4vw, 4.5rem);
-        line-height: 1.1;
-      }
-
-      .lead {
-        font-size: 1.08rem;
-        line-height: 1.7;
-        color: var(--muted);
-        max-width: 60ch;
-      }
-
-      .panel {
-        background: var(--panel);
-        border: 1px solid rgba(140, 233, 154, 0.2);
-        border-radius: 22px;
-        box-shadow: 0 18px 40px var(--shadow);
-        overflow: hidden;
-      }
-
-      .art {
-        min-height: 360px;
-        background:
-          linear-gradient(180deg, rgba(144, 213, 255, 0.25), rgba(8, 22, 18, 0.85)),
-          radial-gradient(circle at 50% 18%, rgba(255, 242, 142, 0.8), transparent 25%),
-          linear-gradient(180deg, #5ec7f7, #90d8ff 40%, #9bdc7e 40%, #6ebf5a 100%);
-        position: relative;
-      }
-
-      .sun {
-        position: absolute;
-        width: 110px;
-        height: 110px;
-        border-radius: 50%;
-        background: rgba(255, 241, 180, 0.9);
-        top: 35px;
-        right: 60px;
-        box-shadow: 0 0 60px rgba(255, 239, 176, 0.9);
-      }
-
-      .creature {
-        position: absolute;
-        left: 50%;
-        bottom: 30px;
-        transform: translateX(-50%);
-        width: 180px;
-        height: 180px;
-      }
-
-      .body {
-        position: absolute;
-        left: 22px;
-        top: 40px;
-        width: 130px;
-        height: 78px;
-        background: #2d2a35;
-        border-radius: 12px;
-        box-shadow: inset 0 0 0 4px rgba(0,0,0,0.12);
-      }
-
-      .body:before, .body:after {
-        content: "";
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        background: #5af3a8;
-        top: 22px;
-        border-radius: 4px;
-        box-shadow: 0 0 12px rgba(90, 243, 168, 0.85);
-      }
-
-      .body:before { left: 28px; }
-      .body:after { right: 28px; }
-
-      .smile {
-        position: absolute;
-        left: 50%;
-        bottom: 12px;
-        transform: translateX(-50%);
-        width: 72px;
-        height: 34px;
-        border-bottom: 5px solid #ff5d5d;
-        border-radius: 0 0 60px 60px;
-      }
-
-      .head {
-        position: absolute;
-        left: 36px;
-        bottom: 43px;
-        width: 110px;
-        height: 110px;
-        background: #f3d104;
-        border-radius: 50%;
-        box-shadow: inset 0 0 0 6px rgba(0,0,0,0.08);
-      }
-
-      .head:before, .head:after {
-        content: "";
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        background: #111;
-        border-radius: 50%;
-        top: 42px;
-      }
-
-      .head:before { left: 28px; }
-      .head:after { right: 28px; }
-
-      .head .mouth {
-        position: absolute;
-        left: 25%;
-        right: 25%;
-        bottom: 22px;
-        height: 24px;
-        border-bottom: 6px solid #111;
-        border-radius: 0 0 50px 50px;
-      }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
-        margin-top: 48px;
-      }
-
-      .card {
-        background: var(--panel-alt);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 18px;
-        padding: 22px;
-      }
-
-      .card h2 {
-        margin-top: 0;
-        margin-bottom: 12px;
-        font-size: 1.5rem;
-      }
-
-      .tag {
-        display: inline-block;
-        padding: 6px 10px;
-        border-radius: 999px;
-        font-size: 0.72rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        margin-bottom: 12px;
-      }
-
-      .tag.green { background: rgba(140, 233, 154, 0.15); color: var(--green); }
-      .tag.red { background: rgba(255, 93, 93, 0.15); color: #ff8e8e; }
-
-      ul {
-        margin: 0;
-        padding-left: 18px;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-
-      .footer {
-        text-align: center;
-        color: var(--muted);
-        margin-top: 38px;
-        font-size: 0.9rem;
-      }
-
-      @media (max-width: 780px) {
-        .hero, .cards {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <section class="hero">
-        <div>
-          <span class="eyebrow">Game Concept</span>
+    <div class="wrapper">
+      <header>
+        <div class="brand">
+          <div class="brand-mark"></div>
           <h1>Aafiyah's World</h1>
-          <p class="lead">
-            A playful evolution game where a cheerful blocky companion eats letters,
-            creates words, and transforms into a frightening smiling entity as the world
-            shifts from joy into psychological horror.
-          </p>
         </div>
 
-        <div class="panel art" aria-label="A blocky companion in a bright grassy field">
-          <div class="sun"></div>
-          <div class="creature">
-            <div class="body"></div>
-            <div class="smile"></div>
-            <div class="head">
-              <div class="mouth"></div>
+        <div class="top-links">
+          <a class="link-button" href="games/index.html">Games</a>
+          <a class="link-button" href="games/README.md">Concept</a>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="game-panel">
+          <div id="stage" class="stage" aria-label="Playable game stage">
+            <div class="sun"></div>
+            <div id="creature" class="creature" aria-live="polite">
+              <div class="body">
+                <div class="smile"></div>
+              </div>
+              <div class="head">
+                <div class="mouth"></div>
+              </div>
+            </div>
+            <div class="grass"></div>
+          </div>
+
+          <div class="status-bar">
+            <div class="metrics">
+              <div class="metric">
+                <span class="metric-label">Letters</span>
+                <span id="lettersCollected" class="metric-value">0</span>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Words</span>
+                <span id="wordsMade" class="metric-value">0</span>
+              </div>
+              <div class="metric">
+                <span class="metric-label">Evolution</span>
+                <span id="evolution" class="metric-value">Companion</span>
+              </div>
+            </div>
+
+            <div class="controls">
+              <button id="startGame" class="primary">Start Game</button>
+              <button id="collectLetter" class="secondary">Eat Letter</button>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="cards">
-        <article class="card">
-          <span class="tag green">Asset 1</span>
-          <h2>The Blocky Companion</h2>
-          <ul>
-            <li>3D model / overworld entity</li>
-            <li>Dark blocky humanoid form with glowing green eyes</li>
-            <li>Large yellow smiley head floating above the body</li>
-            <li>Bright grassy field with sunlight and low-poly scenery</li>
-            <li>Functions as a companion, mount, or hidden collectible</li>
-          </ul>
-        </article>
+        <aside class="side-panel">
+          <div class="sidebar-section">
+            <h2>Word Form</h2>
+            <div class="word-box">
+              <div id="wordDisplay" class="word-display">—</div>
+            </div>
+          </div>
 
-        <article class="card">
-          <span class="tag red">Asset 2</span>
-          <h2>The Smiling Entity</h2>
-          <ul>
-            <li>2D cinematic key art / horror boss design</li>
-            <li>Hollow eyes, wide grin, exposed teeth, and uncanny flesh tones</li>
-            <li>Typography reads “IT’S ME IT’S VERITY”</li>
-            <li>Used for title art, loading screens, and boss encounters</li>
-            <li>Represents the final evolution state of the creature</li>
-          </ul>
-        </article>
-      </section>
+          <div class="sidebar-section">
+            <h2>Beat Maker</h2>
+            <div class="beat-box">
+              <div class="beat-pad-grid">
+                <button class="beat-pad" data-sound="Kick">Kick</button>
+                <button class="beat-pad" data-sound="Snare">Snare</button>
+                <button class="beat-pad" data-sound="Hi-Hat">Hi-Hat</button>
+                <button class="beat-pad" data-sound="Bass">Bass</button>
+              </div>
 
-      <div class="footer">
-        Built-in beat maker: Aafiyah can create beats, layer voice recordings, and shape the soundtrack of her world.
-      </div>
+              <div class="recording">
+                <button id="recordBtn" class="secondary">Record Voice</button>
+                <span id="recordDot" class="dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="status" id="statusText">Collect letters to grow your companion.</div>
+        </aside>
+      </main>
     </div>
+
+    <script src="game.js"></script>
   </body>
 </html>

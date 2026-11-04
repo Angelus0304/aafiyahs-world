@@ -1,35 +1,26 @@
 # Aafiyah's World
 
-A creative game concept centered on word-eating evolution, companion design, and a music-driven storytelling loop.
+A playable mini web game built around the original Aafiyah's World concept: a cheerful blocky companion eats letters to create words, evolves, and eventually transforms into a chilling Smiling Entity.
 
-## Project Overview
-This repository contains the concept and design notes for a game where a cheerful blocky creature eats letters to form words, evolves, and eventually transforms into a terrifying smiling entity.
+## What is included
+- A working browser game loop with collectible letters and word evolution
+- The original concept art and world story preserved as the visual foundation
+- A beat maker panel for creating loops and recording voice layers
+- A simple landing page and games section so the site loads without 404s
 
-## Included Design Docs
-- [games/README.md](games/README.md) — main game concept, asset descriptions, and gameplay objective
-- [games/beat-maker.md](games/beat-maker.md) — beat maker and voice recording feature concept
+## How to play
+1. Open the homepage in a browser.
+2. Press Start Game.
+3. Click or collect letters to form short words.
+4. Each word pushes the creature forward through its evolution stages.
+5. Use the beat maker to add loop layers and record a vocal pass.
 
-## Key Gameplay Pillars
-- Letter collection and word-building
-- Creature transformation through language
-- Open-world companion and horror boss contrast
-- Built-in beat maker for voice and rhythm creation
+## Project files
+- [index.html](index.html) — playable game screen
+- [game.js](game.js) — game logic and beat maker behavior
+- [styles.css](styles.css) — art and interface styling
+- [games/README.md](games/README.md) — original concept and asset details
+- [games/beat-maker.md](games/beat-maker.md) — beat maker details
 
-## Core Objective
-The first character begins as a playful companion and must eat letters to create words. As those words form and grow, the creature evolves into the second character, the eerie Smiling Entity.
-
-## Asset Highlights
-### Asset 1: The Blocky Companion
-- 3D model / overworld entity
-- Blocky pixel-art silhouette with glowing green eyes
-- Yellow smiley-head companion with a bright grassland setting
-- Optional role as mount, collectible, or hidden open-world easter egg
-
-### Asset 2: The Smiling Entity
-- 2D key art / horror monster model
-- Hollow black eyes, stretched smile, exposed teeth
-- Distressed typography reading "IT'S ME IT'S VERITY"
-- Designed for horror boss encounters and title/loading screen art
-
-## Beat Maker Feature
-Aafiyah can compose loops, record her voice, and layer vocals over rhythm tracks to build the game's soundtrack and create personalized audio moments within the world.
+## Original game direction kept intact
+The project still follows the original idea where the first character is a bright, joyful companion and the second is the horrifying, uncanny Smiling Entity. The playable update adds the actual game loop without removing the original concept.
